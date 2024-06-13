@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)http://127.0.0.1:5500/Calculadora%20de%20Tiempo.html -->
+<html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consumo de Tacos en CDMX</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+        }
+        input, button {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculadora de Consumo de Tacos en la CDMX</h1>
+    <p>Ingrese la cantidad de personas que hay en CDMX:</p>
+    <input type="number" id="num_prs" value="9209944">
+    <p>Ingrese la cantidad promedio que una persona puede llegar a comer al día:</p>
+    <input type="number" id="tc">
+    <br>
+    <button onclick="calcularTacos()">Calcular</button>
+    <h2 id="resultado">El total de tacos consumidos al día en la CDMX son: 5145</h2>
+
+    <script>
+        function calcularTacos() {
+            // Obtener los valores de los inputs
+            let num_prs = document.getElementById('num_prs').value;
+            let tc = document.getElementById('tc').value;
+            
+            // Calcular el total de tacos consumidos al día
+            let total = num_prs * tc;
+            
+            // Mostrar el resultado
+            document.getElementById('resultado').innerText = 
+                'El total de tacos consumidos al día en la CDMX son: ' + total;
+        }
+    </script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+</body></html>
