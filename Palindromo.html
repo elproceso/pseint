@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome Checker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        #checker {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        input, button {
+            padding: 10px;
+            margin: 5px;
+        }
+        #result {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div id="checker">
+    <h1>Palindrome Checker</h1>
+    <input type="text" id="wordInput" placeholder="Enter a word">
+    <button onclick="checkPalindrome()">Check</button>
+    <div id="result"></div>
+</div>
+
+<script>
+    function checkPalindrome() {
+        const word = document.getElementById('wordInput').value.toLowerCase();
+        const reversedWord = word.split('').reverse().join('');
+        const result = document.getElementById('result');
+        
+        if (word === reversedWord) {
+            result.textContent = `"${word}" is a palindrome!`;
+            result.style.color = 'green';
+        } else {
+            result.textContent = `"${word}" is not a palindrome.`;
+            result.style.color = 'red';
+        }
+    }
+</script>
+
+</body>
+</html>
+
+</html>
